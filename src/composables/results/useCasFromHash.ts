@@ -10,7 +10,7 @@ export interface UseCasFromHash {
 export const useCasFromHash = (): UseCasFromHash => {
   const cas = ref<string | null>(null)
 
-  const isValid = computed<boolean>(() => cas.value !== null)
+  const isValid = computed<boolean>(() => Boolean(cas.value))
 
   const getCasValue = (): void => {
     cas.value = getValueFromResultHash(window.location.hash, HashKey.CAS_VALUE)
