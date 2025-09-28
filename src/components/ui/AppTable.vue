@@ -72,9 +72,11 @@ export type AppTableSummaryRow = {
   value: unknown
 }
 
+export type AppTableRow = AppTableDataRow | AppTableSummaryRow
+
 defineProps<{
   columns: AppTableColumn[]
-  rows: Array<AppTableDataRow | AppTableSummaryRow>
+  rows: AppTableRow[]
 }>()
 
 const alignClass = (align?: Align) =>
