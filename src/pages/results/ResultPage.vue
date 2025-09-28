@@ -4,7 +4,7 @@
 
     <AppOverlayLoader v-else-if="isLoading"> Loading ... </AppOverlayLoader>
 
-    <template v-else> Results: {{ results }} </template>
+    <ResultContent v-else-if="results" :results="results" />
   </div>
 </template>
 
@@ -13,6 +13,7 @@ import { useCasFromHash } from '@/composables/results/useCasFromHash.ts'
 import { useResultsByCas } from '@/composables/results/useResultsByCas.ts'
 import SubmitErrorAlert from '@/components/results/SubmitErrorAlert.vue'
 import AppOverlayLoader from '@/components/ui/AppOverlayLoader.vue'
+import ResultContent from '@/components/results/ResultContent.vue'
 
 const { cas, isValid } = useCasFromHash()
 const { results, isError, isLoading } = useResultsByCas(cas)

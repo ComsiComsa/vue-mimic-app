@@ -1,13 +1,16 @@
 import { type ShallowRef, shallowRef, type Ref, ref, watch } from 'vue'
 import { getSubmitByCas } from '@/services/api/getSubmitByCas.ts'
+import type { SubmitByCasResponse } from '@/types/api/SubmitByCas.ts'
 
-interface UseResultsByCas<T = unknown> {
+interface UseResultsByCas<T = SubmitByCasResponse> {
   results: ShallowRef<T | null>
   isLoading: Ref<boolean>
   isError: Ref<boolean>
 }
 
-export const useResultsByCas = <T = unknown>(cas: Ref<string | null>): UseResultsByCas<T> => {
+export const useResultsByCas = <T = SubmitByCasResponse>(
+  cas: Ref<string | null>,
+): UseResultsByCas<T> => {
   const results = shallowRef<T | null>(null)
   const isLoading = ref(false)
   const isError = ref(false)
