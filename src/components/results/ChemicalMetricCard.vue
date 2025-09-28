@@ -1,5 +1,5 @@
 <template>
-  <ChemicalCard>
+  <ChemicalCard no-content-padding>
     <template #header>
       <div class="card-header">
         <div class="card-header__block">
@@ -17,7 +17,7 @@
     </template>
 
     <template #content>
-      <slot />
+      <slot></slot>
     </template>
   </ChemicalCard>
 </template>
@@ -32,12 +32,18 @@ import ChemicalGuideLink from '@/components/results/ChemicalGuideLink.vue'
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 
   &__block {
     display: flex;
     align-items: center;
-    gap: .25rem;
+    gap: 0.25rem;
+
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+
+    min-width: 0;
   }
 
   &__title {
@@ -56,6 +62,11 @@ import ChemicalGuideLink from '@/components/results/ChemicalGuideLink.vue'
     font-weight: 600;
     line-height: 19px;
     color: #595959;
+  }
+
+  &__actions {
+    flex: 0 0 auto;
+    text-align: right;
   }
 }
 </style>

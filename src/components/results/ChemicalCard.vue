@@ -4,13 +4,18 @@
       <slot name="header"></slot>
     </div>
 
-    <div class="chemical-card__content">
+    <div
+      class="chemical-card__content"
+      :class="{ 'chemical-card__content--flush': noContentPadding }"
+    >
       <slot name="content"></slot>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{ noContentPadding?: boolean }>()
+</script>
 
 <style scoped lang="scss">
 @use '@/styles/variables' as *;
@@ -36,6 +41,10 @@
 
   &__content {
     padding: 1rem;
+
+    &--flush {
+      padding: 0;
+    }
   }
 }
 </style>

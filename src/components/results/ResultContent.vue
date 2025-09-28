@@ -11,7 +11,7 @@
     </div>
 
     <div class="result-content__main">
-      <ChemicalLogKowCard />
+      <ChemicalLogKowCard :log-kow="results.logKow" />
       <ChemicalMpbpCard />
     </div>
   </div>
