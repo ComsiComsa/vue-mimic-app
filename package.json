@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint vue-mimic-app --fix",
     "format": "prettier --write src",
-    "start": "serve -s dist -l 5173"
+    "start": "serve -s dist -l $PORT"
   },
   "dependencies": {
     "serve": "^14.2.5",
