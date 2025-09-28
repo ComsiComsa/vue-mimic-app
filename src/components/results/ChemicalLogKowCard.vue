@@ -120,6 +120,9 @@ const summaryRows: AppTableRow[] = [
 </script>
 
 <style scoped lang="scss">
+@use '@/styles/variables' as *;
+@use 'sass:map';
+
 .logkow-card {
   &__summary {
     display: grid;
@@ -178,7 +181,7 @@ const summaryRows: AppTableRow[] = [
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: map.get($breakpoints, md)) {
     &__summary {
       grid-template-columns: 1fr;
     }

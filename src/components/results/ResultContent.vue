@@ -12,7 +12,10 @@
 
     <div class="result-content__main">
       <ChemicalLogKowCard :log-kow="results.logKow" />
-      <ChemicalMpbpCard />
+      <ChemicalMpbpCard
+        :melting-point="results.meltingPoint"
+        :boiling-point="results.boilingPoint"
+      />
     </div>
   </div>
 </template>

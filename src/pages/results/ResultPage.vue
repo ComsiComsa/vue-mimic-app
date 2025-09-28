@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="results-page container">
     <SubmitErrorAlert v-if="!isValid || isError" :cas="cas" />
 
     <AppOverlayLoader v-else-if="isLoading"> Loading ... </AppOverlayLoader>
@@ -19,4 +19,8 @@ const { cas, isValid } = useCasFromHash()
 const { results, isError, isLoading } = useResultsByCas(cas)
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.results-page {
+  padding-bottom: 1rem;
+}
+</style>
