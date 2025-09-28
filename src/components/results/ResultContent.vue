@@ -11,19 +11,19 @@
     </div>
 
     <div class="result-content__main">
-      <ChemicalCard> Card 2 </ChemicalCard>
-
-      <ChemicalCard> Card 3 </ChemicalCard>
+      <ChemicalLogKowCard />
+      <ChemicalMpbpCard />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import ChemicalCard from '@/components/results/ChemicalCard.vue'
 import type { SubmitByCasResponse } from '@/types/api/SubmitByCas.ts'
 import AppDownloadIcon from '@/components/icons/AppDownloadIcon.vue'
 import AppIconButton from '@/components/ui/AppIconButton.vue'
 import ChemicalSummaryCard from '@/components/results/ChemicalSummaryCard.vue'
+import ChemicalLogKowCard from '@/components/results/ChemicalLogKowCard.vue'
+import ChemicalMpbpCard from '@/components/results/ChemicalMpbpCard.vue'
 
 defineProps<{
   results: SubmitByCasResponse
