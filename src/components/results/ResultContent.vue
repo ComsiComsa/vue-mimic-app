@@ -1,7 +1,13 @@
 <template>
   <div class="result-content">
     <div class="result-content__sidebar">
-      <ChemicalCard> Card 1 </ChemicalCard>
+      <ChemicalSummaryCard :properties="results.chemicalProperties">
+        <template #actions>
+          <AppIconButton variant="dark">
+            <AppDownloadIcon width="14px" height="14px" />
+          </AppIconButton>
+        </template>
+      </ChemicalSummaryCard>
     </div>
 
     <div class="result-content__main">
@@ -15,6 +21,9 @@
 <script setup lang="ts">
 import ChemicalCard from '@/components/results/ChemicalCard.vue'
 import type { SubmitByCasResponse } from '@/types/api/SubmitByCas.ts'
+import AppDownloadIcon from '@/components/icons/AppDownloadIcon.vue'
+import AppIconButton from '@/components/ui/AppIconButton.vue'
+import ChemicalSummaryCard from '@/components/results/ChemicalSummaryCard.vue'
 
 defineProps<{
   results: SubmitByCasResponse

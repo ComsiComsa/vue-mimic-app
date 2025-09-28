@@ -30,6 +30,12 @@
 
   box-shadow: $card-box-shadow;
 
-  padding: $card-spacer-y $card-spacer-x;
+  &__header {
+    padding: 0.85rem 1rem;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
 }
 </style>
